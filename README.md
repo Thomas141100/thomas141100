@@ -22,14 +22,14 @@
 
 ### 🎧 Now Playing on Spotify
 
-<a href="https://thomas141100.vercel.app/now-playing?open">
-    <img src="https://thomas141100.vercel.app/now-playing" width="540" height="64" alt="Now Playing">
+<a href="https://status.thelegend27.fr/now-playing?open">
+    <img src="https://status.thelegend27.fr/now-playing" width="540" height="64" alt="Now Playing">
 </a>
 
 ### 📈 Top Tracks
 
-<a href="https://thomas141100.vercel.app/top-tracks?i=1&open"><img src="https://thomas141100.vercel.app/top-tracks?i=1" width="540" height="64"></a>
+<a href="https://status.thelegend27.fr/top-tracks?i=1&open"><img src="https://status.thelegend27.fr/top-tracks?i=1" width="540" height="64"></a>
 
-<a href="https://thomas141100.vercel.app/top-tracks?i=2&open"><img src="https://thomas141100.vercel.app/top-tracks?i=2" width="540" height="64"></a>
+<a href="https://status.thelegend27.fr/top-tracks?i=2&open"><img src="https://status.thelegend27.fr/top-tracks?i=2" width="540" height="64"></a>
 
-<a href="https://thomas141100.vercel.app/top-tracks?i=3&open"><img src="https://thomas141100.vercel.app/top-tracks?i=3" width="540" height="64"></a>
+<a href="https://status.thelegend27.fr/top-tracks?i=3&open"><img src="https://status.thelegend27.fr/top-tracks?i=3" width="540" height="64"></a>
