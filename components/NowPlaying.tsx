@@ -20,19 +20,22 @@ export const Player: React.FC<Props> = ({
   isPlaying,
 }) => {
   return (
-    <ReadmeImg width="256" height="64">
+    <ReadmeImg width="540" height="64">
       <style>
         {`
             .paused { 
               animation-play-state: paused !important;
-              background: #e1e4e8 !important;
+              background: #24292e !important;
             }
 
             img:not([src]) {
               content: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
-              border-radius: 6px;
               background: #FFF;
-              border: 1px solid #e1e4e8;
+              border: 1px solid #24292e;
+            }
+
+            img {
+              border-radius: 3px;
             }
 
             p {
@@ -43,9 +46,10 @@ export const Player: React.FC<Props> = ({
             .progress-bar {
               position: relative;
               width: 100%;
+              max-width: 360px;
               height: 4px;
               margin: -1px;
-              border: 1px solid #e1e4e8;
+              border: 1px solid #24292e;
               border-radius: 4px;
               overflow: hidden;
               padding: 2px;
@@ -59,7 +63,7 @@ export const Player: React.FC<Props> = ({
               width: 100%;
               height: 6px;
               transform-origin: left center;
-              background-color: #24292e;
+              background-color: #e1e4e8;
               animation: progress ${duration}ms linear;
               animation-delay: -${progress}ms;
             }
@@ -134,6 +138,7 @@ export const Player: React.FC<Props> = ({
           paddingLeft: 4,
         }}
       >
+        <Text style={{ width: '16px', marginRight: '16px' }} size="large" weight="bold">{ isPlaying ? '▶' : '' }</Text>
         <img id="cover" src={cover ?? null} width="48" height="48" />
         <div
           style={{

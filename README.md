@@ -6,7 +6,7 @@
 
 ☁️ Currently trying Kubernetes with talented individuals !
 
-💻 Programming Languages:
+💻 Programming Languages :
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](#)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](#)
 [![C](https://img.shields.io/badge/C-2570ae.svg?style=flat&logo=c&logoColor=white)](#)
@@ -18,8 +18,18 @@
 [![SQL](https://img.shields.io/badge/SQL-eeeeee.svg?style=flat&logo=mysql&logoColor=black)](#)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)](#)
 
-🎧 **Now Playing** on Spotify
+---
 
-<a href="https://status.tsaury.fr/now-playing?open">
-    <img src="https://status.tsaury.fr/now-playing" width="256" height="64" alt="Now Playing">
+### 🎧 Now Playing on Spotify
+
+<a href="https://thomas141100.vercel.app/now-playing?open">
+    <img src="https://thomas141100.vercel.app/now-playing" width="540" height="64" alt="Now Playing">
 </a>
+
+### 📈 Top Tracks
+
+<a href="https://thomas141100.vercel.app/top-tracks?i=1&open"><img src="https://thomas141100.vercel.app/top-tracks?i=1" width="540" height="64"></a>
+
+<a href="https://thomas141100.vercel.app/top-tracks?i=2&open"><img src="https://thomas141100.vercel.app/top-tracks?i=2" width="540" height="64"></a>
+
+<a href="https://thomas141100.vercel.app/top-tracks?i=3&open"><img src="https://thomas141100.vercel.app/top-tracks?i=3" width="540" height="64"></a>
