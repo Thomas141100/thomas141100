@@ -6,7 +6,7 @@ import { topTrack } from "../utils/spotify";
 export default async function (req: NowRequest, res: NowResponse) {
   let { i, open } = req.query;
   i = Array.isArray(i) ? i[0] : i;
-  const item = await topTrack({ index: Number.parseInt(i) });
+  const item = await topTrack({ index: Number.parseInt(i) - 1 });
   
   if (!item) {
       return res.status(404).end();
