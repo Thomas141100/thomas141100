@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/camelcase */
-const dotenv = require("dotenv");
-const fs = require("fs");
-const fetch = require("node-fetch");
-const querystring = require("querystring");
-const http = require("http");
-const open = require("open");
+import { config as _config } from "dotenv";
+import { existsSync, appendFile, writeFile } from "fs";
+import fetch from "node-fetch";
+import { stringify } from "querystring";
+import { createServer } from "http";
+import open from "open";
 
-if (fs.existsSync(".env")) {
+if (existsSync(".env")) {
   console.log("Using .env file to supply config environment variables");
-  dotenv.config({ path: ".env" });
+  _config({ path: ".env" });
 }
 
 if (process.env["SPOTIFY_REFRESH_TOKEN"]) {
@@ -47,7 +47,7 @@ const getSpotifyToken = async (authCode) => {
     code: authCode,
     redirect_uri: `http://localhost:${SERVER_PORT}/callback`,
   };
-  const formUrlEncodedBody = querystring.stringify(body);
+  const formUrlEncodedBody = stringify(body);
 
   const getSpotifyTokenOptions = {
     method: "POST",
@@ -73,8 +73,8 @@ const getSpotifyToken = async (authCode) => {
 };
 
 const writeTokenToEnvFile = (refreshToken) => {
-  if (fs.existsSync(".env")) {
-    fs.appendFile(
+  if (existsSync(".env")) {
+    appendFile(
       "./.env",
       `\nSPOTIFY_REFRESH_TOKEN=${refreshToken}`,
       function (err) {
@@ -83,7 +83,7 @@ const writeTokenToEnvFile = (refreshToken) => {
       }
     );
   } else {
-    fs.writeFile("./.env", `\nSPOTIFY_REFRESH_TOKEN=${refreshToken}`, function (
+    writeFile("./.env", `\nSPOTIFY_REFRESH_TOKEN=${refreshToken}`, function (
       err
     ) {
       if (err) throw err;
@@ -92,7 +92,7 @@ const writeTokenToEnvFile = (refreshToken) => {
   }
 };
 
-const server = http.createServer(async function (req, res) {
+const server = createServer(async function (req, res) {
   if (req.url.startsWith("/callback?code=")) {
     const authCode = req.url.slice("/callback?code=".length);
     const tokenResponse = await getSpotifyToken(authCode);

@@ -1,11 +1,11 @@
-import { NowRequest, NowResponse } from "@vercel/node";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import { renderToString } from "react-dom/server";
 import Block from '../../components/Block';
 import { getBlockColor, setBlockColor } from "../../utils/db";
 import { getNextColor } from '../../utils/colors';
 import { createHash } from 'crypto';
 
-export default async function (req: NowRequest, res: NowResponse) {
+export default async function (req: VercelRequest, res: VercelResponse) {
   const { query: { num }, headers } = req;
   const index = Number.parseInt(num as string) - 1;
   const dest = headers["sec-fetch-dest"] || headers["Sec-Fetch-Dest"];
