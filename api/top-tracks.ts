@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import { createElement } from "react";
 import { renderToString } from "react-dom/server";
 import { Track } from "../components/Track";
 import { topTrack } from "../utils/spotify";
@@ -37,7 +38,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
   const text = renderToString(
-    Track({ index: Number.parseInt(i), cover: coverImg, artist, track })
+    createElement(Track, { index: Number.parseInt(i), cover: coverImg, artist, track })
   );
   return res.status(200).send(text);
 }

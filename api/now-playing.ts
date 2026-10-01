@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import { createElement } from "react";
 import { renderToString } from "react-dom/server";
 import { decode } from "querystring";
 import { Player } from "../components/NowPlaying";
@@ -38,7 +39,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
   const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
+    createElement(Player, { cover: coverImg, artist, track, isPlaying, progress, duration })
   );
   return res.status(200).send(text);
 }

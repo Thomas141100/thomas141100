@@ -1,19 +1,7 @@
-import { createClient } from "redis";
+import { getClient } from "./redis";
 
 const REFRESH_TOKEN_KEY = "spotify:refresh_token";
 const ACCESS_TOKEN_KEY = "spotify:access_token";
-
-const client = createClient({ url: process.env.REDIS_URL });
-client.on("error", (err) => console.error("Redis error", err));
-let connecting: Promise<unknown> = null;
-
-async function getClient() {
-  if (!client.isOpen) {
-    connecting ??= client.connect().finally(() => (connecting = null));
-    await connecting;
-  }
-  return client;
-}
 
 export async function getRefreshToken() {
   const redis = await getClient();

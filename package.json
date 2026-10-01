@@ -5,9 +5,7 @@
   "description": "Github profile",
   "main": "index.js",
   "dependencies": {
-    "faunadb": "^4.8.0",
     "isomorphic-unfetch": "^4.0.0",
-    "querystring": "^0.2.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "redis": "^6.3.0",
